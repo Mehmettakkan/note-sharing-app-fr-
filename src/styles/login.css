@@ -1,0 +1,10 @@
+@import './form.css';
+
+/* Giriş sayfasına özel stiller */
+.ui.message.error {
+  background-color: #f2dede;
+  color: #a94442;
+  border-color: #ebccd1;
+  border-radius: 0 !important;
+  text-align: center;
+}
