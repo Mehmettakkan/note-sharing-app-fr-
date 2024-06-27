@@ -1,0 +1,137 @@
+/* favorite-note.css */
+
+/* Container styling */
+.favorite-note-container {
+  padding: 20px;
+}
+
+/* Grid layout for the notes */
+.favorite-note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Individual note column */
+.favorite-note-column {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card styling */
+.favorite-note-card {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-note-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.favorite-note-image {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e0e0;
+  transition: opacity 0.3s ease-in-out; /* Added animation */
+}
+
+/* Card content styling */
+.favorite-note-card-content {
+  padding: 20px;
+  background-color: #ffffff;
+  flex: 1 0 auto;
+}
+
+.favorite-note-card-header {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.favorite-note-card-meta {
+  color: #888;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.favorite-note-card-meta .icon {
+  margin-right: 5px;
+}
+
+.favorite-note-card-description {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Footer styling */
+.favorite-note-card-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.favorite-note-author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #f0f2f5;
+}
+
+.favorite-note-author-info {
+  font-weight: bold;
+}
+
+/* Button styling */
+.ui.two.buttons .button {
+  width: 48%;
+  margin: 5px 1%;
+}
+
+.ui.two.buttons .button:first-child {
+  background-color: #21ba45;
+  color: white;
+}
+
+.ui.two.buttons .button:last-child {
+  background-color: #db2828;
+  color: white;
+}
+
+.ui.two.buttons .button:hover {
+  opacity: 0.8;
+}
+/* Animasyon */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive ayarlar */
+@media (max-width: 1200px) {
+  .favorite-column {
+    flex: 0 0 48%; /* Her satıra iki kart sığacak şekilde ayarla */
+    max-width: 48%; /* Maksimum genişlik */
+  }
+}
+
+@media (max-width: 768px) {
+  .favorite-column {
+    flex: 0 0 100%; /* Her satıra bir kart sığacak şekilde ayarla */
+    max-width: 100%; /* Maksimum genişlik */
+  }
+}
