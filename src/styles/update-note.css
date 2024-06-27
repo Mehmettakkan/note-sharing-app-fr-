@@ -1,0 +1,85 @@
+/* Container for the note update form */
+.update-note-container {
+  padding: 2em;
+  animation: fadeIn 0.5s ease-in-out; /* Animation for form appearance */
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Header styling */
+.update-note-header {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+/* Form field styling */
+.update-note-form .field {
+  margin-bottom: 1.5em;
+}
+
+/* Success and error message styling */
+.update-note-message {
+  margin-top: 1em;
+  animation: fadeIn 0.5s ease-in-out; /* Animation for messages */
+}
+
+/* Button styling */
+.update-note-button {
+  width: 100%;
+  padding: 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out; /* Animation for button */
+}
+
+.update-note-button:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdown styling */
+.update-note-dropdown {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive settings */
+@media (max-width: 1200px) {
+  .update-note-container {
+    padding: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .update-note-container {
+    padding: 1em;
+  }
+
+  .update-note-button {
+    padding: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .update-note-container {
+    padding: 0.5em;
+  }
+
+  .update-note-button {
+    padding: 0.6em;
+  }
+}
