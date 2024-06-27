@@ -1,0 +1,64 @@
+.animated-dropdown .menu {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Genel stiller */
+.ui.menu .item .dropdown {
+  border: none !important;
+}
+
+.ui.menu .item .dropdown .menu {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  background-color: #f9f9f9 !important;
+}
+
+.ui.menu .item .dropdown .menu .item {
+  padding: 10px 20px !important;
+}
+
+.ui.menu .item .dropdown .menu .item:hover {
+  background-color: #f1f1f1 !important;
+}
+
+.ui.menu .item .dropdown .menu .item .icon {
+  margin-right: 8px !important;
+}
+
+/* Profil resmi stilleri */
+.ui.menu .item img.user-avatar {
+  border-radius: 50% !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important;
+  width: 50px; /* Boyutu arttır */
+  height: 50px; /* Boyutu arttır */
+}
+
+/* Dropdown başlık stilleri */
+.ui.menu .item .dropdown .text {
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
+/* Responsive ayarlar */
+@media (max-width: 768px) {
+  .ui.menu .item img.user-avatar {
+    width: 40px; /* Küçük ekranlar için boyutu küçült */
+    height: 40px; /* Küçük ekranlar için boyutu küçült */
+  }
+
+  .ui.menu .item .dropdown .menu .item {
+    padding: 8px 16px !important;
+  }
+}
