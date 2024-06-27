@@ -1,0 +1,32 @@
+.categories-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.categories-menu .category-item {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.categories-menu .category-item:hover {
+  background-color: #f1f1f1;
+}
+
+.categories-menu .category-count {
+  font-weight: normal;
+  color: #888;
+}
+
+.categories-menu .subcategories-menu {
+  padding-left: 20px;
+}
+
+.categories-menu .subcategory-item {
+  font-size: 1em;
+  padding: 5px 15px;
+}
+
+.categories-menu .subcategory-item:hover {
+  background-color: #f9f9f9;
+}
