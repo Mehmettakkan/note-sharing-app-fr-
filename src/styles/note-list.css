@@ -1,0 +1,150 @@
+.note-list-container {
+  padding: 1em;
+}
+
+.note-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.note-column {
+  padding: 0.5rem; /* Kartlar arası boşluk */
+  flex: 0 0 32%; /* Her satıra üç kart sığacak şekilde ayarla */
+  max-width: 32%; /* Maksimum genişlik */
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease-in-out; /* Eklenen animasyon */
+}
+
+.note-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff; /* Kartların arka plan rengi */
+  border: 1px solid #ddd; /* Çerçeve */
+  border-radius: 10px; /* Kenar yuvarlaklığı */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+  overflow: hidden; /* İçerik taşmalarını engelle */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 1em; /* Alt boşluk */
+  height: 490px; /* Sabit yükseklik */
+}
+
+.note-card:hover {
+  transform: scale(1.05); /* Hover efekti */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Hover gölge efekti */
+}
+
+.note-image {
+  width: 100%;
+  height: 158px; /* Görsel yüksekliği */
+  object-fit: cover; /* Resmin oranlarını bozmadan kutuya sığmasını sağlar */
+  transition: opacity 0.3s ease-in-out; /* Eklenen animasyon */
+}
+
+.note-image:hover {
+  opacity: 0.8; /* Hover efekti */
+}
+
+.card-content {
+  padding: 0.5em 1em;
+  flex: 1 0 auto; /* İçeriğin esnekliğini ayarlar */
+}
+
+.card-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  height: 65px; /* Başlık yüksekliği */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out; /* Eklenen animasyon */
+}
+
+.card-header:hover {
+  color: #007bff; /* Hover efekti */
+}
+
+.card-meta {
+  font-size: 0.9em;
+  color: #666;
+  height: 20px; /* Meta bilgi yüksekliği */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 0.5em;
+}
+
+.card-description {
+  font-size: 0.9em;
+  color: #444;
+  height: 45px; /* Açıklama yüksekliği */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 0.5em;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  height: 63px; /* Kişi bilgisi yüksekliği */
+}
+
+.card-footer img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out; /* Eklenen animasyon */
+}
+
+.card-footer img:hover {
+  transform: scale(1.2); /* Hover efekti */
+}
+
+.author-info {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.ui.two.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.ui.two.buttons .ui.button {
+  width: calc(50% - 2.5px); /* Butonlar arası 5px boşluk olacak şekilde ayarla */
+  margin-right: 5px;
+}
+
+.ui.two.buttons .ui.button:last-child {
+  margin-right: 0;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive ayarlar */
+@media (max-width: 1200px) {
+  .note-column {
+      flex: 0 0 48%; /* Her satıra iki kart sığacak şekilde ayarla */
+      max-width: 48%; /* Maksimum genişlik */
+  }
+}
+
+@media (max-width: 768px) {
+  .note-column {
+      flex: 0 0 100%; /* Her satıra bir kart sığacak şekilde ayarla */
+      max-width: 100%; /* Maksimum genişlik */
+  }
+}
