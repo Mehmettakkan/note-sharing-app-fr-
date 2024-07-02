@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Button, Icon, Menu, Table } from "semantic-ui-react";
+import {Icon, Menu, Table } from "semantic-ui-react";
 import SharerService from "../services/sharerService";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToFavorite } from "../store/actions/favoriteActions";
-import { toast } from "react-toastify";
 
 export default function SharerList() {
   const [sharers, setSharers] = useState([]);
-  const dispatch = useDispatch(); // favoritede kullanılacak bunlar
-
   useEffect(() => {
     let sharerService = new SharerService();
     sharerService.getSharers().then((result) => setSharers(result.data));
   }, []);
-
-  const handleAddToFavorite = (note) => {
-    dispatch(addToFavorite(note));
-    toast.success(`${note.title} eklendi.`);
-  };
 
   return (
     <div>
@@ -62,11 +52,6 @@ export default function SharerList() {
                     </li>
                   ))}
                 </ul>
-              </Table.Cell>
-              <Table.Cell>
-                <Button onClick={() => handleAddToFavorite(sharer)}>
-                  Favoriye ekle
-                </Button>
               </Table.Cell>
             </Table.Row>
           ))}
