@@ -7,7 +7,7 @@ export default class NoteService {
     return axios.get(`${API_URL}/api/notes/all`);
   }
   getNoteById(noteId) {
-    return axios.get(`${API_URL}/api/notes/${noteId}`);
+    return axios.get(`${API_URL}/notes/${noteId}`);
   }
   getNotesByCourseId(courseId) {
     return axios.get(`${API_URL}/api/courses/${courseId}/notes`);
