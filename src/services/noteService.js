@@ -4,7 +4,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 export default class NoteService {
   getNotes() {
-    return axios.get(`https://jellyfish-app-cwjpf.ondigitalocean.app/api/notes/all`);
+    return axios.get(`${API_URL}/api/notes/all`);
   }
   getNoteById(noteId) {
     return axios.get(`${API_URL}/api/notes/${noteId}`);
