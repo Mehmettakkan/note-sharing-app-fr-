@@ -20,6 +20,18 @@ export default function NoteDetail() {
     noteService.getNoteById(id).then((result) => setNote(result.data));
   }, [id]);
 
+  const handleDownload = (fileName) => {
+    let noteService = new NoteService();
+    noteService.downloadFile(fileName).then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", fileName);
+      document.body.appendChild(link);
+      link.click();
+    });
+  };
+
   if (note === null) {
     return <div>Loading...</div>; // Veriler yüklenirken gösterilecek içerik
   }
@@ -71,8 +83,7 @@ export default function NoteDetail() {
                 {note.content || "İçerik yok"}
               </p>
               <Button
-                as="a"
-                href={note.downloadUrl || "#"}
+                onClick={() => handleDownload(note.fileName)}
                 color="blue"
                 size="large"
                 style={{ marginTop: "1em" }}

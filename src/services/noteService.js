@@ -19,4 +19,9 @@ export default class NoteService {
       },
     });
   }
+  downloadFile(fileName) {
+    return axios.get(`${API_URL}/api/notes/files/${fileName}`, {
+      responseType: "blob",
+    });
+  }
 }
